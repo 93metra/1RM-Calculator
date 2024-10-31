@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.name {
+  color: var(--input-background);
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.input {
+  inline-size: 150px;
+  block-size: 50px;
+  border-radius: 30px;
+  font-size: 20px;
+  text-align: center;
+  background-color: var(--input-background);
+  border: 2px solid var(--input-background);
+  transition: var(--common-transition);
+  color: #fff;
+}
+
+.input:focus {
+  border: 2px solid var(--interface-accent);
+  outline: none;
+}
