@@ -1,50 +1,17 @@
-/* .app {
-  align-self: center;
-  justify-self: center;
-  inline-size: 100%;
-  block-size: 100%;
-  background-color: aqua;
-} */
-
 .app {
-  inline-size: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: 20px;
   margin-block-start: 50px;
+  inline-size: 100%;
 }
 
 .title {
-  font-size: 70px;
-  /* color: #0c0c0d; */
+  margin: 30px 0 50px;
   color: var(--input-background);
+  font-size: 70px;
+  text-align: center;
   text-shadow: 2px 2px 2px #000000;
-  margin-block-end: 50px;
-}
-
-.form {
-  /* display: grid;
-  place-items: center; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  inline-size: 80%;
-  box-shadow: 0 0 10px 0 rgba(47, 47, 55, 0.4);
-  border-radius: 20px;
-  padding: 40px 0;
-}
-
-.inputsWraper {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-block-end: 20px;
-} 
-
-.buttonsWraper {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
 }

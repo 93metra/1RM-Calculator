@@ -1,12 +1,12 @@
 .button {
-  inline-size: 150px;
-  block-size: 50px;
+  border: 2px solid var(--input-background);
   border-radius: 30px;
+  color: #fff;
   font-size: 20px;
   text-align: center;
   background-color: var(--input-background);
-  border: 2px solid var(--input-background);
   transition: var(--common-transition);
-  color: #fff;
   cursor: pointer;
+  inline-size: 150px;
+  block-size: 50px;
 }

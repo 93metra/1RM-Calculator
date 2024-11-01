@@ -1,0 +1,27 @@
+.form {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 0 10px 0 rgba(47, 47, 55, 0.4);
+  inline-size: min-content;
+}
+
+.controlsWraper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 20px;
+} 
+
+.buttonsWraper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.inputsWraper {
+  display: flex;
+  gap: 20px;
+}
