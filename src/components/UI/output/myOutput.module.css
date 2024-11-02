@@ -17,10 +17,10 @@
   border: 2px solid var(--interface-accent);
   border-radius: 30px;
   padding: 10px 0;
-  box-shadow: 0 0 10px 0 var(--interface-accent);
+  box-shadow: 0 0 10px 0 var(--interface-accent), inset 0 0 7px #000;
   color: var(--interface-accent);
-  font-size: 70px;
   font-size: 30px;
+  text-shadow: 1px 0px 4px #000;
   background-color: var(--input-background);
   transition: var(--common-transition);
   inline-size: 150px;

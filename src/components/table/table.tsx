@@ -88,7 +88,7 @@ const Table = () => {
         </>
       )}
       <button className={s.toggleButton} onClick={handleToggle}>
-        {isExpanded ? "See less ↑" : "See more ↓"}
+        {isExpanded ? "Show less ↑" : "Show more ↓"}
       </button>
     </div>
   );

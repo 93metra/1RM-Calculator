@@ -25,3 +25,41 @@
   display: flex;
   gap: 20px;
 }
+
+/* submit button */
+.submitButton {
+  color: rgba(81, 177, 103, .5);
+  box-shadow: 0 0 10px rgba(81, 177, 103, 0.4), inset 0 0 2px #000;
+  border: 2px solid rgba(81, 177, 103, 0.2);
+}
+
+.submitButton:hover {
+  color: rgba(81, 177, 103, .7);
+  box-shadow: 0 0 13px 0 rgba(81, 177, 103, 0.6);
+  border: 2px solid rgba(81, 177, 103, 0.5);
+}
+
+.submitButton:active {
+  color: rgba(81, 177, 103, .5);
+  box-shadow: 0 0 10px 0 rgba(81, 177, 103, 0.4), inset 0 0 5px #000;
+  border: 2px solid rgba(81, 177, 103, 0.5);
+}
+
+/* reset button */
+.resetButton {
+  color: rgba(188, 72, 72, 0.7);
+  box-shadow: 0 0 10px 0 rgba(188, 72, 72, 0.4), inset 0 0 2px #000;
+  border: 2px solid rgba(188, 72, 72, 0.2);
+}
+
+.resetButton:hover {
+  color: rgba(188, 72, 72, .9);
+  box-shadow: 0 0 13px 0 rgba(188, 72, 72, 0.6);
+  border: 2px solid rgba(188, 72, 72, 0.5);
+}
+
+.resetButton:active {
+  color: rgba(188, 72, 72, 0.6);
+  box-shadow: 0 0 10px 0 rgba(188, 72, 72, 0.4), inset 0 0 5px #000;
+  border: 2px solid rgba(188, 72, 72, 0.5);
+}

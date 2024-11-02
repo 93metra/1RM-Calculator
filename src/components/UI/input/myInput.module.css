@@ -7,11 +7,13 @@
 
 .name {
   color: var(--input-background);
-  text-shadow: 2px 2px 2px #000000;
+  text-shadow: 2px 2px 2px #000;
 }
 
 .input {
-  border: 2px solid var(--input-background);
+  box-shadow: 0px 0px 3px 0 var(--interface-accent), inset 0 0 3px #000;
+
+  border: 1px solid var(--input-background);
   border-radius: 30px;
   color: #fff;
   font-size: 20px;
@@ -24,5 +26,6 @@
 
 .input:focus {
   border: 2px solid var(--interface-accent);
+  box-shadow: 0 0 10px 0 var(--interface-accent), inset 0 0 4px #000;
   outline: none;
 }

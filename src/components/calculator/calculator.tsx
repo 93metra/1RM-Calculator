@@ -26,9 +26,9 @@ const Calculator = () => {
       const lander = (100 * kilos) / (101.3 - 2.67123 * reps);
       const oConner = kilos * (1 + 0.025 * reps);
 
-      const middleValue = Number(((brzycki + epley + lander + oConner) / 4).toFixed(2));
+      const averageValue = Number(((brzycki + epley + lander + oConner) / 4).toFixed(2));
 
-      setResult(middleValue);
+      setResult(averageValue);
     }
   };
 
@@ -50,8 +50,8 @@ const Calculator = () => {
           />
         </div>
         <div className={s.buttonsWraper}>
-          <MyButton type="submit"> Calculate </MyButton>
-          <MyButton type="reset" onClick={() => setResult(0)}> Reset </MyButton>
+          <MyButton type="submit" extraClass={s.submitButton}> Calculate </MyButton>
+          <MyButton type="reset" extraClass={s.resetButton} onClick={() => setResult(0)}> Reset </MyButton>
         </div>
       </div>
       <MyOutput
