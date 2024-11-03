@@ -37,7 +37,7 @@ const Calculator = () => {
       <div className={s.controlsWraper}>
         <div className={s.inputsWraper}>
           <MyInput
-            name="Weight (kg)"
+            name="Weight"
             type="number"
             placeholder="0"
             onChange={handleKilosChange}

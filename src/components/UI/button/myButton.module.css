@@ -8,6 +8,6 @@
   background-color: var(--input-background);
   transition: var(--common-transition);
   cursor: pointer;
-  inline-size: 150px;
-  block-size: 50px;
+  inline-size: clamp(6.875rem, 5.4305rem + 6.1633vw, 9.375rem);
+  block-size: 50px;/* 110px 150px */
 }
