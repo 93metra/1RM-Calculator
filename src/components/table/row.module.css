@@ -1,0 +1,13 @@
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-block-end: 7px;
+  padding: 0 30px;
+}
+
+.separator {
+  margin-block-end: 7px;
+  border-style: solid;
+  border-color: var(--input-background);
+  box-shadow: 0px 0px 1px var(--interface-accent);
+}

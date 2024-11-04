@@ -1,5 +1,3 @@
-import React, { useState, useContext } from 'react';
-import { TrainingContext } from '../../context/trainingContext';
 import s from './app.module.css';
 import Table from '../table/table';
 import Calculator from '../calculator/calculator';
