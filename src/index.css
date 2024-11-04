@@ -31,7 +31,8 @@ code {
 :root {
   --main-color: #777777;
   --background: #131316;
-  --input-background: rgb(47, 47, 55);
+  --accent-background: #121115;
+  --input-background: #2f2f37;
   --interface-accent: #4c4cff;
   --common-transition: all .1s ease-in;
 }

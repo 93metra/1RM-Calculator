@@ -4,8 +4,10 @@
   gap: 50px;
   border-radius: 20px;
   padding: 30px;
-  box-shadow: 0 0 10px 0 rgba(47, 47, 55, 0.4);
+  box-shadow: 0 0 10px 0 var(--input-background) ;
+  /* border: 1px solid var(--input-background); */
   inline-size: min-content;
+  background-color: var(--accent-background);
 }
 
 .controlsWraper {

@@ -13,7 +13,7 @@
   margin-block-end: clamp(1.25rem, 0.1666rem + 4.6225vw, 3.125rem); /* 50px 20px */
   padding: 0 30px;
   color: var(--input-background);
-  font-size: clamp(2.5rem, 1.4166rem + 4.6225vw, 4.375rem); /* 70px 40px */
+  font-size: clamp(2.75rem, 1.7027rem + 4.4684vw, 4.5625rem); /* 73px 44px */
   text-align: center;
-  text-shadow: 2px 2px 2px #000000;
+  text-shadow: 2px 2px 4px #000000, 0px 0px 1px var(--interface-accent);
 }

@@ -12,7 +12,7 @@
 
 .input {
   box-shadow: 0px 0px 3px 0 var(--interface-accent), inset 0 0 3px #000;
-
+  text-shadow: 1px 0px 2px #000;
   border: 1px solid var(--input-background);
   border-radius: 30px;
   color: var(--main-color);

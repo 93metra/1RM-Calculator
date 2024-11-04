@@ -6,7 +6,7 @@ import MyOutput from "../UI/output/myOutput";
 import s from "./calculator.module.css";
 
 const Calculator = () => {
-  const { kilos, setKilos, reps, setReps, result, setResult } = useContext(TrainingContext)!;
+  const { kilos, setKilos, reps, setReps, result, setResult, setIsActive } = useContext(TrainingContext)!;
 
   const handleKilosChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setKilos(Number(event.target.value));
@@ -29,7 +29,13 @@ const Calculator = () => {
       const averageValue = Number(((brzycki + epley + lander + oConner) / 4).toFixed(2));
 
       setResult(averageValue);
+      setIsActive(true);
     }
+  };
+
+  const handleReset = () => {
+    setResult(0);
+    setIsActive(false);
   };
 
   return (
@@ -51,7 +57,7 @@ const Calculator = () => {
         </div>
         <div className={s.buttonsWraper}>
           <MyButton type="submit" extraClass={s.submitButton}> Calculate </MyButton>
-          <MyButton type="reset" extraClass={s.resetButton} onClick={() => setResult(0)}> Reset </MyButton>
+          <MyButton type="reset" extraClass={s.resetButton} onClick={handleReset}> Reset </MyButton>
         </div>
       </div>
       <MyOutput

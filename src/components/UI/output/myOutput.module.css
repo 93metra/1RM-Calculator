@@ -14,15 +14,20 @@
 .output {
   display: grid;
   place-items: center;
-  border: 2px solid var(--interface-accent);
+  border: 2px solid var(--input-background);
   border-radius: 30px;
   padding: 10px 0;
-  box-shadow: 0 0 10px 0 var(--interface-accent), inset 0 0 7px #000;
-  color: var(--interface-accent);
+  box-shadow: 0 0 3px 0 var(--interface-accent), inset 0 0 7px #000;
+  color: var(--main-color);
   font-size: 30px;
   text-shadow: 1px 0px 4px #000;
   background-color: var(--input-background);
-  transition: var(--common-transition);
   inline-size: 150px;
   block-size: 90px;
+}
+
+.outputActive {
+  color: var(--interface-accent);
+  border: 2px solid var(--interface-accent);
+  box-shadow: 0 0 10px 0 var(--interface-accent), inset 0 0 7px #000;
 }

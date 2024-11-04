@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext} from "react";
+import { clsx } from "clsx";
+import { TrainingContext } from "../../../context/trainingContext";
 import s from "./myOutput.module.css";
 
 interface MyOutputProps {
@@ -7,10 +9,12 @@ interface MyOutputProps {
 }
 
 const MyOutput = React.forwardRef((props: MyOutputProps) => {
+  const { isActive } = useContext(TrainingContext)!;
+
   return (
     <div className={s.wrapper}>
       <h3 className={s.name}>{props.name}</h3>
-      <p className={s.output}>{`${props.children} kg`}</p>
+      <p className={clsx(s.output, isActive && s.outputActive)}>{`${props.children} kg`}</p>
     </div>
   );
 });

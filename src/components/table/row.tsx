@@ -1,5 +1,8 @@
-import s from "./row.module.css";
+import { useContext } from "react";
 import { percentageCalc } from "../../utils/utils";
+import { TrainingContext } from "../../context/trainingContext";
+import clsx from "clsx";
+import s from "./row.module.css";
 
 interface RowProps {
   result: number;
@@ -7,11 +10,13 @@ interface RowProps {
 }
 
 const Row = ({ result, percentage }: RowProps) => {
+  const { isActive } = useContext(TrainingContext)!;
+  
   return (
     <div className={s.row}>
         <div className={s.info}>
-          <p className={s.percentage}>{percentage} %</p>
-          <p className={s.value}>{`${percentageCalc(result, percentage)} kg`}</p>
+          <p className={clsx(s.percentage, isActive && s.percentageActive)}>{percentage} %</p>
+          <p className={clsx(s.value, isActive && s.valueActive)}>{`${percentageCalc(result, percentage)} kg`}</p>
         </div>
         <hr className={s.separator} />
       </div>
