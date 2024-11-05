@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { TrainingContext } from "../../context/trainingContext";
 import MyButton from "../UI/button/myButton";
 import MyInput from "../UI/input/myInput";
@@ -7,20 +7,34 @@ import s from "./calculator.module.css";
 
 const Calculator = () => {
   const { kilos, setKilos, reps, setReps, result, setResult, setIsActive } = useContext(TrainingContext)!;
+  const [error, setError] = useState('');
 
   const handleKilosChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setKilos(Number(event.target.value));
+    setError('');
   };
 
   const handleRepsChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setReps(Number(event.target.value));
-    // console.log(reps);
+    setError('');
+  };
+
+  const validateInput = (kilos: number, reps: number) => {
+    if (kilos < 0 || reps < 0) {
+      setError('⚠︎ Both fields must be positive');
+      return false;
+    } else if (kilos === 0 || reps === 0) {
+      setError('⚠︎ Both fields are required');
+    } else {
+      setError('');
+      return true;
+    }
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (kilos && reps) {
+    if (validateInput(kilos, reps)) {
       const brzycki = kilos * (36 / (37 - reps));
       const epley = kilos * (1 + 0.0333 * reps);
       const lander = (100 * kilos) / (101.3 - 2.67123 * reps);
@@ -34,14 +48,22 @@ const Calculator = () => {
   };
 
   const handleReset = () => {
+    setKilos(0);
+    setReps(0);
     setResult(0);
     setIsActive(false);
+    setError('');
   };
 
   return (
     <form onSubmit={handleSubmit} className={s.form}>
       <div className={s.controlsWraper}>
         <div className={s.inputsWraper}>
+          {error &&
+            <div className={s.errorContainer}>
+              <p className={s.error}>{error}</p>
+            </div>
+          }
           <MyInput
             name="Weight"
             type="number"
