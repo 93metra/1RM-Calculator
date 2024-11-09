@@ -1,8 +1,10 @@
 import { useContext, useState } from "react";
+import clsx from "clsx";
 import { TrainingContext } from "../../context/trainingContext";
 import MyButton from "../UI/button/myButton";
 import MyInput from "../UI/input/myInput";
 import MyOutput from "../UI/output/myOutput";
+import InfoButton from "../UI/info-button/infoButton";
 import s from "./calculator.module.css";
 
 const Calculator = () => {
@@ -57,6 +59,7 @@ const Calculator = () => {
 
   return (
     <form onSubmit={handleSubmit} className={s.form}>
+      <InfoButton extraClass={clsx(s.infoButton, error && s.infoButtonError)} />
       <div className={s.controlsWraper}>
         <div className={s.inputsWraper}>
           {error &&
