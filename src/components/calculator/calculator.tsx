@@ -8,7 +8,7 @@ import InfoButton from "../UI/info-button/infoButton";
 import s from "./calculator.module.css";
 
 const Calculator = () => {
-  const { kilos, setKilos, reps, setReps, result, setResult, setIsActive } = useContext(TrainingContext)!;
+  const { kilos, setKilos, reps, setReps, result, setResult, setIsActive, modalIsOpen, setModalIsOpen, setIsExpanded } = useContext(TrainingContext)!;
   const [error, setError] = useState('');
 
   const handleKilosChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -57,9 +57,16 @@ const Calculator = () => {
     setError('');
   };
 
+  const handleOpenModal = () => {
+    setModalIsOpen(true);
+    setIsExpanded(false);
+  };
+
   return (
     <form onSubmit={handleSubmit} className={s.form}>
-      <InfoButton extraClass={clsx(s.infoButton, error && s.infoButtonError)} />
+      <InfoButton
+        onClick={handleOpenModal}
+        extraClass={clsx(s.infoButton, error && s.infoButtonError)} />
       <div className={s.controlsWraper}>
         <div className={s.inputsWraper}>
           {error &&

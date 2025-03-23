@@ -1,12 +1,10 @@
-import React, { useContext, useState } from "react";
+import { useContext } from "react";
 import { TrainingContext } from "../../context/trainingContext";
 import s from "./table.module.css";
-import { percentageCalc } from "../../utils/utils";
 import Row from "./row";
 
 const Table = () => {
-  const { result } = useContext(TrainingContext)!;
-  const [isExpanded, setIsExpanded] = useState(false);
+  const { result, isExpanded, setIsExpanded } = useContext(TrainingContext)!;
 
   const handleToggle = () => {
     setIsExpanded(!isExpanded);

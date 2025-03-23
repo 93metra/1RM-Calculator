@@ -10,7 +10,7 @@ const InfoButton = ({ onClick, extraClass }: InfoButtonProps) => {
   const className = `${s.infoButton} ${extraClass || ''}`;
   
   return (
-    <button className={className} onClick={onClick}>
+    <button className={className} onClick={onClick} type="button">
       i
     </button>
   );
