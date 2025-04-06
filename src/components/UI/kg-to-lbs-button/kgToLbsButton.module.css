@@ -1,0 +1,27 @@
+.kg_to_lbs_Button {
+  border: 2px solid rgba(76, 76, 255, 0.4);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(76, 76, 255, 0.4), inset 0 0 3px #000;
+  color: rgba(76, 76, 255, .8);
+  font-family: serif;
+  font-weight: bold;
+  font-size: 27px;
+  text-shadow: 1px 1px 3px #000;
+  background-color: var(--input-background);
+  transition: var(--common-transition);
+  cursor: pointer;
+  inline-size: 45px;
+  aspect-ratio: 1/1;
+}
+
+.kg_to_lbs_Button:hover {
+  border: 2px solid rgba(76, 76, 255, 0.7);
+  box-shadow: 0 0 13px 0 rgba(76, 76, 255, 0.8);
+  color: rgba(76, 76, 255, 1);
+}
+
+.kg_to_lbs_Button:active {
+  border: 2px solid rgba(76, 76, 255, 0.5);
+  box-shadow: 0 0 10px 0 rgba(76, 76, 255, 0.6), inset 0 0 5px #000;
+  color: rgba(76, 76, 255, .7);
+}

@@ -13,6 +13,8 @@ interface TrainingContextProps {
   setModalIsOpen: (value: boolean)=> void;
   isExpanded: boolean;
   setIsExpanded: (value: boolean) => void;
+  lbsIsActive: boolean;
+  setLbsIsActive: (value: boolean) => void;
 }
 
 export const TrainingContext = createContext<TrainingContextProps | null>(null);
@@ -24,9 +26,10 @@ export const TrainingProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [isActive, setIsActive] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [lbsIsActive, setLbsIsActive] = useState(false);
 
   return (
-    <TrainingContext.Provider value={{ kilos, setKilos, reps, setReps, result, setResult, isActive, setIsActive, modalIsOpen, setModalIsOpen, isExpanded, setIsExpanded }}>
+    <TrainingContext.Provider value={{ kilos, setKilos, reps, setReps, result, setResult, isActive, setIsActive, modalIsOpen, setModalIsOpen, isExpanded, setIsExpanded, lbsIsActive, setLbsIsActive }}>
       {children}
     </TrainingContext.Provider>
   );
