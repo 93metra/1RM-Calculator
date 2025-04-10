@@ -10,13 +10,13 @@ interface RowProps {
 }
 
 const Row = ({ result, percentage }: RowProps) => {
-  const { isActive } = useContext(TrainingContext)!;
+  const { isActive, lbsOrKg } = useContext(TrainingContext)!;
   
   return (
     <div className={s.row}>
         <div className={s.info}>
           <p className={clsx(s.percentage, isActive && s.percentageActive)}>{percentage} %</p>
-          <p className={clsx(s.value, isActive && s.valueActive)}>{`${percentageCalc(result, percentage)} kg`}</p>
+          <p className={clsx(s.value, isActive && s.valueActive)}>{`${percentageCalc(result, percentage)} ${lbsOrKg}`}</p>
         </div>
         <hr className={s.separator} />
       </div>

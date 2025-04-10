@@ -1,18 +1,19 @@
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import clsx from "clsx";
 import { TrainingContext } from "../../context/trainingContext";
 import MyButton from "../UI/button/myButton";
 import MyInput from "../UI/input/myInput";
 import MyOutput from "../UI/output/myOutput";
 import InfoButton from "../UI/info-button/infoButton";
+import KgToLbsButton from "../UI/kg-to-lbs-button/kgToLbsButton";
 import s from "./calculator.module.css";
 
 const Calculator = () => {
-  const { kilos, setKilos, reps, setReps, result, setResult, setIsActive, modalIsOpen, setModalIsOpen, setIsExpanded } = useContext(TrainingContext)!;
+  const { weight, setWeight, reps, setReps, result, setResult, setIsActive, setModalIsOpen, setIsExpanded, lbsOrKg, switchLbsKg } = useContext(TrainingContext)!;
   const [error, setError] = useState('');
 
   const handleKilosChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setKilos(Number(event.target.value));
+    setWeight(Number(event.target.value));
     setError('');
   };
 
@@ -36,11 +37,11 @@ const Calculator = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (validateInput(kilos, reps)) {
-      const brzycki = kilos * (36 / (37 - reps));
-      const epley = kilos * (1 + 0.0333 * reps);
-      const lander = (100 * kilos) / (101.3 - 2.67123 * reps);
-      const oConner = kilos * (1 + 0.025 * reps);
+    if (validateInput(weight, reps)) {
+      const brzycki = weight * (36 / (37 - reps));
+      const epley = weight * (1 + 0.0333 * reps);
+      const lander = (100 * weight) / (101.3 - 2.67123 * reps);
+      const oConner = weight * (1 + 0.025 * reps);
 
       const averageValue = Number(((brzycki + epley + lander + oConner) / 4).toFixed(2));
 
@@ -50,7 +51,7 @@ const Calculator = () => {
   };
 
   const handleReset = () => {
-    setKilos(0);
+    setWeight(0);
     setReps(0);
     setResult(0);
     setIsActive(false);
@@ -62,11 +63,27 @@ const Calculator = () => {
     setIsExpanded(false);
   };
 
+  const switchKgToLbs = () => {
+    switchLbsKg(lbsOrKg === 'kg' ? 'lb' : 'kg');
+
+    if (lbsOrKg === 'kg' && result) {
+      setResult(Number((result * 2.20462).toFixed(1)));
+    } else if (lbsOrKg === 'lb' && result) {
+      setResult(Number((result / 2.20462).toFixed(1)));
+    } else if (!result) {
+      return;
+    }
+  };
+
   return (
     <form onSubmit={handleSubmit} className={s.form}>
-      <InfoButton
-        onClick={handleOpenModal}
-        extraClass={clsx(s.infoButton, error && s.infoButtonError)} />
+      <div className={s.infoButtonWrapper}>
+        <InfoButton
+          onClick={handleOpenModal}
+          extraClass={clsx(s.infoButton, error && s.infoButtonError)} />
+        <KgToLbsButton
+          onClick={switchKgToLbs} />
+      </div>
       <div className={s.controlsWraper}>
         <div className={s.inputsWraper}>
           {error &&

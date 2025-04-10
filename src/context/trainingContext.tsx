@@ -1,8 +1,8 @@
 import React, { createContext, useState } from 'react';
 
 interface TrainingContextProps {
-  kilos: number;
-  setKilos: (value: number) => void;
+  weight: number;
+  setWeight: (value: number) => void;
   reps: number;
   setReps: (value: number) => void;
   result: number;
@@ -13,23 +13,23 @@ interface TrainingContextProps {
   setModalIsOpen: (value: boolean)=> void;
   isExpanded: boolean;
   setIsExpanded: (value: boolean) => void;
-  lbsIsActive: boolean;
-  setLbsIsActive: (value: boolean) => void;
+  lbsOrKg: string;
+  switchLbsKg: (value: 'kg' | 'lb') => void;
 }
 
 export const TrainingContext = createContext<TrainingContextProps | null>(null);
 
 export const TrainingProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [kilos, setKilos] = useState(0);
+  const [weight, setWeight] = useState(0);
   const [reps, setReps] = useState(0);
   const [result, setResult] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
-  const [lbsIsActive, setLbsIsActive] = useState(false);
+  const [lbsOrKg, switchLbsKg] = useState('kg');
 
   return (
-    <TrainingContext.Provider value={{ kilos, setKilos, reps, setReps, result, setResult, isActive, setIsActive, modalIsOpen, setModalIsOpen, isExpanded, setIsExpanded, lbsIsActive, setLbsIsActive }}>
+    <TrainingContext.Provider value={{ weight, setWeight, reps, setReps, result, setResult, isActive, setIsActive, modalIsOpen, setModalIsOpen, isExpanded, setIsExpanded, lbsOrKg, switchLbsKg }}>
       {children}
     </TrainingContext.Provider>
   );

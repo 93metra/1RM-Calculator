@@ -9,7 +9,7 @@ interface KgToLbsButtonProps {
 
 const KgToLbsButton = ({ onClick, extraClass }: KgToLbsButtonProps) => {
   const className = `${s.kg_to_lbs_Button} ${extraClass || ''}`;
-  const { lbsIsActive } = useContext(TrainingContext)!;
+  const { lbsOrKg } = useContext(TrainingContext)!;
 
   return (
     <button
@@ -18,7 +18,7 @@ const KgToLbsButton = ({ onClick, extraClass }: KgToLbsButtonProps) => {
       type="button"
       title="Press to switch"
     >
-      {lbsIsActive ? 'kg' : 'lb'}
+      {lbsOrKg}
     </button>
   );
 };

@@ -9,12 +9,12 @@ interface MyOutputProps {
 }
 
 const MyOutput = React.forwardRef((props: MyOutputProps) => {
-  const { isActive } = useContext(TrainingContext)!;
+  const { isActive, lbsOrKg } = useContext(TrainingContext)!;
 
   return (
     <div className={s.wrapper}>
       <h3 className={s.name}>{props.name}</h3>
-      <p className={clsx(s.output, isActive && s.outputActive)}>{`${props.children} kg`}</p>
+      <p className={clsx(s.output, isActive && s.outputActive)}>{`${props.children} ${lbsOrKg}`}</p>
     </div>
   );
 });
