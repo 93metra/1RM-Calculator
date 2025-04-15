@@ -17,7 +17,7 @@
 
 ℹ️ **Modal Help Window** – Helpful information for users on how to use the calculator effectively.\
 🎨 **Theme Switching** – Light and dark mode for better user experience.\
-💾 **Local Storage Support** – Save user results for future reference.\
+💾 **Local Storage Support** – Save user results for future reference.
 
 ## 🛠️ Technologies Used
 

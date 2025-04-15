@@ -12,9 +12,11 @@ const Modal = () => {
         setModalIsOpen(false);
       }
     };
-
+    document.body.style.overflow = 'hidden';
     document.addEventListener('keydown', handleKey);
+
     return () => {
+      document.body.style.overflow = '';
       document.removeEventListener('keydown', handleKey);
     };
   }, [setModalIsOpen]);
