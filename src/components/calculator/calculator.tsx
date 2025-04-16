@@ -9,7 +9,7 @@ import KgToLbsButton from "../UI/kg-to-lbs-button/kgToLbsButton";
 import s from "./calculator.module.css";
 
 const Calculator = () => {
-  const { weight, setWeight, reps, setReps, result, setResult, setIsActive, setModalIsOpen, setIsExpanded, lbsOrKg, switchLbsKg } = useContext(TrainingContext)!;
+  const { weight, setWeight, reps, setReps, result, setResult, setIsActive, setModalIsOpen, lbsOrKg, switchLbsKg } = useContext(TrainingContext)!;
   const [error, setError] = useState('');
 
   const handleKilosChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -60,7 +60,6 @@ const Calculator = () => {
 
   const handleOpenModal = () => {
     setModalIsOpen(true);
-    setIsExpanded(false);
   };
 
   const switchKgToLbs = () => {

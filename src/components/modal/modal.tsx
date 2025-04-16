@@ -2,6 +2,7 @@ import s from './modal.module.css'
 import { TrainingContext } from '../../context/trainingContext';
 import { useContext, useEffect } from 'react';
 import CloseButton from '../UI/button/close-button/closeButton'
+import InfoBlock from '../info-block/infoBlock';
 
 const Modal = () => {
   const { setModalIsOpen } = useContext(TrainingContext)!;
@@ -25,7 +26,7 @@ const Modal = () => {
     <div className={s.overlay} onClick={() => setModalIsOpen(false)}>
       <div className={s.main} onClick={(e) => e.stopPropagation()}>
         <CloseButton onClick={() => setModalIsOpen(false)} extraClass={s.closeButton} />
-        <h2 className={s.title}>What is 1 Rep Max (1RM)?</h2>
+        <InfoBlock />
       </div>
     </div>
   )
