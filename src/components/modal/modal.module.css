@@ -1,13 +1,13 @@
-.overlay {
-  position: fixed;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, .5);
-  inline-size: 100%;
-  block-size: 100vh;
+.modalOverlay {
+  position: fixed !important;
+  z-index: 1 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  overflow: hidden ! important;
+  background-color: rgba(0, 0, 0, .5) ! important;
+  inline-size: 100% ! important;
+  block-size: 100vh ! important;
 }
 
 .main {
@@ -20,11 +20,20 @@
   box-shadow: 0 0 3px var(--main-color);
   background-color: var(--accent-background);
   inline-size: 80%;
-  block-size: 80%;
+  block-size: 80vh;
 }
 
 .closeButton {
   position: absolute;
   top: -55px;
   right: 0;
+}
+
+/* @media */
+
+@media screen and (max-width: 430px) {
+  .main {
+    inline-size: 90%;
+    block-size: 550px;
+  }
 }

@@ -23,7 +23,7 @@ const Modal = () => {
   }, [setModalIsOpen]);
 
   return (
-    <div className={s.overlay} onClick={() => setModalIsOpen(false)}>
+    <div className={s.modalOverlay} onClick={() => setModalIsOpen(false)}>
       <div className={s.main} onClick={(e) => e.stopPropagation()}>
         <CloseButton onClick={() => setModalIsOpen(false)} extraClass={s.closeButton} />
         <InfoBlock />

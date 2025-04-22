@@ -16,6 +16,11 @@
   block-size: min-content;
 }
 
+.infoButton {
+  font-size: clamp(1.0625rem, 0.9268rem + 0.5051vw, 1.25rem); /* 17px 20px */
+  block-size: clamp(2.8125rem, 2.5863rem + 0.8418vw, 3.125rem); /* 50px 45px */
+}
+
 .buttonActive {
   border: 2px solid rgba(76, 76, 255, 0.7);
   box-shadow: 0 0 13px 0 rgba(76, 76, 255, 0.8);
@@ -32,7 +37,7 @@
   padding: 30px;
   box-shadow: inset 0 0 3px #000;
   overflow: scroll;
-  font-size: 21px;
+  font-size: clamp(1.0625rem, 0.8815rem + 0.6734vw, 1.3125rem); /* 17px 21px */
   scrollbar-width: 3px;
   inline-size: 90%;
   block-size: 100%;
@@ -60,4 +65,16 @@
 
 .bold {
   font-weight: bold;
+}
+
+/* @media */
+
+@media screen and (max-width: 430px) {
+  .textContainer {
+    inline-size: 100%;
+  }
+
+  .buttonsWrapper {
+    inline-size: 100%;
+  }
 }
