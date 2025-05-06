@@ -4,10 +4,10 @@
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  overflow: hidden ! important;
-  background-color: rgba(0, 0, 0, .5) ! important;
-  inline-size: 100% ! important;
-  block-size: 100vh ! important;
+  overflow: hidden !important;
+  background-color: rgba(0, 0, 0, .5) !important;
+  inline-size: 100% !important;
+  block-size: 100vh !important;
 }
 
 .main {
